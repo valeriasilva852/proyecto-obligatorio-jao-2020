@@ -27,3 +27,4 @@ function navegacionWeb(){  // esta funcion hace que pueda navegra por la pagina
         window.location.assign('index.html'); // redirecciona al index
     }
 }
+
