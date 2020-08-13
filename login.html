@@ -31,47 +31,62 @@
       padding: 0;
     }
     .imagen{
- 
-      margin: 0;
-  
-  list-style: none;
-  
-  top: 10%;
-  width: 400px;
-  padding-right: 20pt 0;
+        
+      margin-top: -110px;
+      width: 300px;
+     padding-top: -110px;
+      padding-right: 70pt 0;
+      
 }
     .login{
-    width: 280px;
+    width: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 50px;
+    padding-left: 20px;
     transform: translate(-50%, -50%);
+    background: rgba(248, 241, 201, 0.61);
+    box-shadow: 10px 30px 40px rgba(24, 20, 1, 0.61);
+
 }
 
 .login h1{
     
     font-size: 40px;
-    border-bottom: 3px solid;
     margin-bottom: 50px;
+    border-bottom: 1px solid;
     padding: 13px 0;
 }
 
 .text{
-    width: 100%;
-    overflow: hidden ;
+    
+    
     font-size: 20px;
-    padding: 8px 0;
+    padding: 10px ;
     margin: 8px 0;
     border-bottom: 1px solid;
 }
+
+#user{
+  left: 28px;
+  position: absolute;
+}
 .text input{
-  border: hidden;
-    outline: none;
+  
     background: none;
     font-size: 18px;
-    width: 100px;
+    border: none;
     
-    margin: 10px;
+    
+}
+#label_pass{
+  color: red;
+  font-size: 17px;
+}
+#label_email{
+  color: red;
+  font-size: 17px;
 }
 .btn{
     width: 100%;
@@ -90,23 +105,28 @@
 
 <body>
 <div class="login">
+  <div class="imagen-p">
   <img class="imagen" src="img/login.png">
   <h1 id="title">Login</h1>
   <div class="text" name="" value="">
-      <i class="fas fa-user-tag"></i>
-      <input type="text" placeholder="Email adress"  id="email" name="" value="" onblur="myFunctionValidacion(this.value)">
-      <label id="label_email" style="display: none;"> error campo vacio</label>
-  </div>
-  <div class="text" name="" value="">
-      <i class="fas fa-lock"></i>
-      <input  type="password" placeholder="Password" id="pass" name="" value="" onblur="myFunctionPassword(this.value)"> 
-      <label id="label_pass" style="display: none;"> Campo vacio</label>
-  </div>
+      <i class="fas fa-user-tag" ></i>
+        <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus onblur="myFunctionValidacion(this.value)">
+        <label for="inputEmail" id="label_email" style="display: none;"> Campo vacio </label>
+      </div>
+    
+      <div class="text">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="pass" class="form-control" placeholder="Password" required onblur="myFunctionPassword(this.value)">
+        <label id="label_pass" style="display: none;"> Pleas insert password</label>
+      </div>
+    
+
   <div class="form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1" >Remember me!</label>
   </div>
-  <input class="btn" type="button"  name="" value="Sign in" onclick="navegacionWeb()"> 
+  <i class="fas fa-sign-in-alt"></i>
+  <input class="btn" type="button"  name="" value="Sign in" onclick="navegacionWeb()">
 </div>
 
   <script src="js/init.js"></script>
