@@ -35,7 +35,9 @@
       margin-top: -110px;
       width: 300px;
      padding-top: -110px;
-      padding-right: 70pt 0;
+      padding-right: 90px 10px;
+      padding-left: 50px;
+
       
 }
     .login{
@@ -63,14 +65,17 @@
     
     
     font-size: 20px;
-    padding: 10px ;
+    padding: 7px ;
     margin: 8px 0;
     border-bottom: 1px solid;
+
 }
 
-#user{
-  left: 28px;
+.text i{
+  
   position: absolute;
+  padding-right: 50px;
+  padding-top: 13px;
 }
 .text input{
   
@@ -97,6 +102,11 @@
     cursor: pointer;
     margin: 12px 0;
 }
+.boton i{
+  position: absolute;
+  padding-top: 25px;
+  padding-left: 90px;
+}
 
 
   </style>
@@ -110,13 +120,13 @@
   <h1 id="title">Login</h1>
   <div class="text" name="" value="">
       <i class="fas fa-user-tag" ></i>
-        <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus onblur="myFunctionValidacion(this.value)">
+        <input type="email" id="email" class="form-control" placeholder="   Email address" required autofocus onblur="myFunctionValidacion(this.value)">
         <label for="inputEmail" id="label_email" style="display: none;"> Campo vacio </label>
       </div>
     
       <div class="text">
         <i class="fas fa-lock"></i>
-        <input type="password" id="pass" class="form-control" placeholder="Password" required onblur="myFunctionPassword(this.value)">
+        <input type="password" id="pass" class="form-control" placeholder="   Password" required onblur="myFunctionPassword(this.value)">
         <label id="label_pass" style="display: none;"> Pleas insert password</label>
       </div>
     
@@ -125,6 +135,7 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1" >Remember me!</label>
   </div>
+  <div class="boton">
   <i class="fas fa-sign-in-alt"></i>
   <input class="btn" type="button"  name="" value="Sign in" onclick="navegacionWeb()">
 </div>
