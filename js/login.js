@@ -21,9 +21,10 @@ function myFunctionPassword(valor){
 }
 
 function navegacionWeb(){  // esta funcion hace que pueda navegra por la pagina 
-    var usuario = document.getElementById("email").value; //crea valriable email con valor de lo que esta adentro del campo
+    var email = document.getElementById("email").value; //crea valriable email con valor de lo que esta adentro del campo
     var password = document.getElementById("pass").value;
-    if( (usuario != "") && (password != "") ){
+    if( (email != "") && (password != "") ){
+        localStorage.setItem('user', email )
         window.location.assign('index.html'); // redirecciona al index
     }
 }
