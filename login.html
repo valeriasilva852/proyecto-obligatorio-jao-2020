@@ -76,12 +76,15 @@
   position: absolute;
   padding-right: 50px;
   padding-top: 13px;
+  padding-left: 4px;
+  
 }
 .text input{
   
     background: none;
     font-size: 18px;
     border: none;
+    padding-left: 30px;
     
     
 }
@@ -120,14 +123,14 @@
   <h1 id="title">Login</h1>
   <div class="text" name="" value="">
       <i class="fas fa-user-tag" ></i>
-        <input type="email" id="email" class="form-control" placeholder="   Email address" required autofocus onblur="myFunctionValidacion(this.value)">
+        <input type="email" id="email" class="form-control" placeholder="Email address"  onblur="myFunctionValidacion(this.value)" required>
         <label for="inputEmail" id="label_email" style="display: none;"> Campo vacio </label>
       </div>
     
       <div class="text">
         <i class="fas fa-lock"></i>
-        <input type="password" id="pass" class="form-control" placeholder="   Password" required onblur="myFunctionPassword(this.value)">
-        <label id="label_pass" style="display: none;"> Pleas insert password</label>
+        <input type="password" id="pass" class="form-control" placeholder="Password"  onblur="myFunctionPassword(this.value)" required>
+        <label id="label_pass" style="display: none;"> Please insert password</label>
       </div>
     
 
