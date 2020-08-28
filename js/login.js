@@ -24,9 +24,11 @@ function navegacionWeb(){  // esta funcion hace que pueda navegra por la pagina
     var email = document.getElementById("email").value; //crea valriable email con valor de lo que esta adentro del campo
     var password = document.getElementById("pass").value;
     if( (email != "") && (password != "") ){
-        localStorage.setItem('user', email )
+        localStorage.setItem('user', email ) // guardando el correo del usuario que se esta logeando 
         window.location.assign('index.html'); // redirecciona al index
+        localStorage.getItem('user');
     }
+
+    
 }
-
-
+$('.spans').html(localStorage.getItem('user')) ;
