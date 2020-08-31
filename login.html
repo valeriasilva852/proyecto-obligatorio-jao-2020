@@ -26,9 +26,10 @@
       align-items: center;
       padding-top: 40px;
       padding-bottom: 40px;
-      background-color: #f5f5f5;
+      
       margin: 0;
       padding: 0;
+      background: url(img/login2.jpg);
     }
     .imagen{
         
@@ -49,7 +50,7 @@
     padding-left: 20px;
     transform: translate(-50%, -50%);
     background: rgba(248, 241, 201, 0.61);
-    box-shadow: 10px 30px 40px rgba(24, 20, 1, 0.61);
+    box-shadow: 20px 40px 60px rgba(24, 20, 1, 0.61);
 
 }
 
@@ -70,6 +71,7 @@
     border-bottom: 1px solid;
 
 }
+
 .formulario__input-error{
   font-size: 12px;
   color: red;
@@ -102,7 +104,8 @@
   position: absolute;
   right: 9px;
 opacity: 0;
-z-index: 16px;
+
+padding-top: 150px;
  
   
   
@@ -115,14 +118,6 @@ opacity: 0;
 z-index: 16px;
 }
 
-#label_pass{
-  color: red;
-  font-size: 17px;
-}
-#label_email{
-  color: red;
-  font-size: 17px;
-}
 .btn{
     width: 100%;
     background: none;
@@ -146,6 +141,7 @@ z-index: 16px;
   grid-column: span 2;
   font-size: 13px;
   display: none;
+  
 }
 .formulario__mesaje-activo{
   display: block;
@@ -153,15 +149,16 @@ z-index: 16px;
 }
 .formulario__grupo-correcto .formulario__validacion2{
 color: #1ed12d;
-opacity: 1;
+
 }
 .formulario__grupo-incorrecto .formulario__validaciones{
   color: #bb2929;
   opacity: 1;
+  
 }
 .formulario__grupo-incorrecto .form-control{
   border: 3px solid #bb2929;
-  opacity: 1;
+  
 }
   </style>
 </head>
@@ -174,26 +171,26 @@ opacity: 1;
   <h1 id="title">Login</h1>
   <div class="formulario__grupo " name="" value="" id="grupo__email">
       <i class="fas fa-user-tag" ></i>
-        <input type="email" id="email" class="form-control" placeholder="Email address" name="email"  onblur="myFunctionValidacion(this.value)" required>
-        <i class="formulario__validaciones fas fa-times-circle"></i><i class="formulario__validacion2 fas fa-check-circle"></i>
-        <p class="formulario__input-error ">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+        <input type="email" id="email" class="form-control" placeholder="Email address" name="email"   required>
+        <i class="formulario__validacion2 fas fa-check-circle"></i>
+        <label class="formulario__input-error" id="label_email">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</label>
       </div>
     
       <div class="formulario__grupo " id="grupo__password">
         <i class="fas fa-lock"></i>
-        <input type="password" id="pass" class="form-control" placeholder="Password" name="password" onblur="myFunctionPassword(this.value)" required>
-        <i class=" formulario__validaciones fas fa-times-circle"></i><i class="formulario__validacion2 fas fa-check-circle"></i>
-        <p class="formulario__input-error ">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+        <input type="password" id="pass" class="form-control" placeholder="Password" name="password"  required>
+        <i class="formulario__validacion2 fas fa-check-circle"></i>
+        <p class="formulario__input-error " id="label_password">La contraseña tiene que ser de 4 a 12 dígitos.</p>
       </div>
     
 
-  <div class="form-check">
+  <div class="form-check" id="terminos" >
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1" >Acepto terminos y condiciones</label>
   </div>
   <div class="boton">
   <i class="fas fa-sign-in-alt"></i>
-  <input class="btn" type="button"  name="" value="Sign in" onclick="navegacionWeb()">
+  <input class="btn" type="button"id="boton_inicio" name="" value="Sign in" onclick="navegacionWeb()">
 </div>
 <div class="formulario__mesaje" id="formulario__mensaje">
    <p ><i class="fas fa-exclamation-triangle"></i><b> Error</b>: porfavor inserte campos correctamente</p>
