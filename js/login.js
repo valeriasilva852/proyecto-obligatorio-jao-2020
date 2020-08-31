@@ -4,22 +4,59 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
+// intento de mejorar el login
 
-function myFunctionValidacion(valor){ // esta funcion es para validacion de campos vacios 
-   if(valor == ""){
-     document.getElementById("label_email").style.display = "block"; //es para que se muestre el mensaje campo vacio
-   }else {
-    document.getElementById("label_email").style.display = "none"; // para escondaerlo mientras no hay accione
-   }
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+const expresiones = {
+    password: /^.{4,12}$/, // 4 a 12 digitos.
+	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 }
-function myFunctionPassword(valor){
-    if(valor == ""){
-        document.getElementById("label_pass").style.display = "block";
-    }else{
-        document.getElementById("label_pass").style.display = "none";
+
+const campos = {
+    password: false,
+	email: false
+}
+
+const validarFormulario = (e) => {
+	switch (e.target.name) {
+		case "email":
+            if(expresiones.email.test(e.target.value)){
+               document.getElementById('grupo__email').classList.remove('formulario__grupo-incorrecto')
+               document.getElementById('grupo__email').classList.add('formulario__grupo-correcto')
+               document.getElementById("label_email").style.display = "none";
+            }else{
+                document.getElementById('grupo__email').classList.add('formulario__grupo-incorrecto')
+                document.getElementById('grupo__email').classList.remove('formulario__grupo-correcto')
+                document.getElementById("label_email").style.display = "block";
+            }
+            break;
+            case "password":
+            if(expresiones.password.test(e.target.value)){
+               document.getElementById('grupo__password').classList.remove('formulario__grupo-incorrecto')
+               document.getElementById('grupo__password').classList.add('formulario__grupo-correcto')
+               document.getElementById("label_password").style.display = "none";
+            }else{
+                document.getElementById('grupo__password').classList.add('formulario__grupo-incorrecto')
+                document.getElementById('grupo__password').classList.remove('formulario__grupo-correcto')
+                document.getElementById("label_password").style.display = "block";
+            }
+            break;
+		
     }
 }
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+formulario.addEventListener('submit', (e) => {
 
+});
+
+
+
+//navegacion web
 function navegacionWeb(){  // esta funcion hace que pueda navegra por la pagina 
     var email = document.getElementById("email").value; //crea valriable email con valor de lo que esta adentro del campo
     var password = document.getElementById("pass").value;
@@ -32,3 +69,4 @@ function navegacionWeb(){  // esta funcion hace que pueda navegra por la pagina
     
 }
 $('.spans').html(localStorage.getItem('user')) ;
+
