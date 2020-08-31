@@ -51,7 +51,17 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 formulario.addEventListener('submit', (e) => {
+  
+	
 
+    const terminos = document.getElementById('terminos');
+	if( expresiones.password && expresiones.email  && terminos.checked ){
+        formulario.reset();
+    }else{
+        document.getElementById("label_mensaje").style.display = "none";
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+        document.getElementById("label_mensaje").style.display = "block";
+    }
 });
 
 
