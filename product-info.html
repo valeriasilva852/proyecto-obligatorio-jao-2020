@@ -13,9 +13,73 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <style>#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+  font-size: 500px;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+#btn{
+  
+  background-color: #3483FA;
+  margin: 10px 0px 0px 20px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 2px solid;
+  color: aliceblue;
+  cursor: pointer;
+  
+}
+.formulario__grupo-correcto{
+  color: #1ed12d;
+}
+.formulario__grupo-incorrecto {
+  color: #bb2929;
+  opacity: 1;
+}
+#box{
+  font-size: 20px;
+  width: 75%;
+}
+#label_box{
+  color: red;
+}
+
+</style>
 </head>
 
 <body>
+  
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -26,14 +90,81 @@
       <a class="py-2 d-none d-md-inline-block" href="my-profile.html">Bienvenido <span class="spans"></span></a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción de la categoría</h2>
+        <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
+        
+      </div>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Cantidad de productos en la categoría</dt>
+        <dd>
+          <p id="productCount"></p>
+        </dd>
+
+        <dt>Criterio para incluir productos en esta categoría</dt>
+        <dd>
+          <p id="productCriteria"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+      </dl>
+      <br> </br>
+      <dt>Comentarios</dt>
+      
+        <dd>
+          <div class="row">
+            <div class="col">
+            <p  id="commentScore"></p>
+              <p  id="commentDescription"></p>
+                <p  id="commentUser"></p>
+                  <p  id="commentDateTime"></p>
+                    <div calss="col" id="comments-info" > </div>
+                    </div></div>
+                    
+       </dd>
+       <dt>Preguntas</dt>
+       <dd></dd>
+      
+       
+      <form   name="formix"  onsubmit="return validar()">
+        <p class="clasificacion" id="myform">
+          <input id="radio1" type="radio" name="estrellas" value="5" required ><!--
+          --><label for="radio1">★</label><!--
+          --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+          --><label for="radio2">★</label><!--
+          --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+          --><label for="radio3">★</label><!--
+          --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+          --><label for="radio4">★</label><!--
+          --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+          --><label for="radio5" >★</label>
+        </p>
+        
+        <input class="question__input" name="comentarios" id="box" type="text"  placeholder="Escribe tu comentario aqui!"  maxlength="2000" required></input>
+        <input type="submit" id="btn" value="Preguntar"  onclick="myFunctionValidacion(comentarios.value)"> </input>
+        
+        
+      </form>
+      <br></br>
+      
+
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
-  </div>
+  </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -43,6 +174,7 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+  
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
