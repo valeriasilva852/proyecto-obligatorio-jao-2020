@@ -80,3 +80,21 @@ function navegacionWeb(){  // esta funcion hace que pueda navegra por la pagina
 }
 $('.spans').html(localStorage.getItem('user')) ;
 
+
+function nombreUsuario(){
+    if(localStorage.getItem('user') == null){
+      email = "logueate"
+    }else{
+    
+        email = localStorage.getItem('user');
+        document.getElementById("nombreSecion").textContent = "bienvenido "+ email;
+    }
+
+}
+
+function cerrarSesion(){
+    document.getElementById("logout").addEventListener("click", function(e){
+        window.localStorage.removeItem('user');
+
+    });
+};
