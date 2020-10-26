@@ -7,6 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+  <script src="https://kit.fontawesome.com/7227a7dc62.js" crossorigin="anonymous"></script>
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -29,6 +30,62 @@
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+      body{
+        background: #F8F8F8;
+      }
+      .content-box{
+        box-sizing: content-box; 
+        width: 250px;
+  height: 210px;
+  padding: 20px;
+  border-radius: 8px;
+  
+  background: white;
+  
+
+      }
+
+      h6{
+        text-align: center;
+      }
+      #total,
+      #envio,
+      #total2,
+      #icono2
+      {
+        
+        float: right; 
+    text-align: right; 
+    padding-left: 10px;
+      }
+      .btn{
+        text-align: center;
+        width: 100%;
+      background: #ff4747;
+      border: 2px solid;
+      cursor: pointer;
+      color: white;
+ 
+      }
+      #icono{
+        float: right; 
+    text-align: right; 
+    padding-left: 10px;
+      }
+      .inputs{
+        padding: 30px;
+        width: 82%;
+      }
+      h6{
+        text-align: center;
+      }
+    
+      #CVV{
+        position: absolute;
+        margin-left: 59%;
+      }
+    
+      
     }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +93,7 @@
   <link href="css/dropzone.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background: #F8F8F8;">
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -46,7 +103,7 @@
       
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="nombreSecion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Bienvenido <span class="spans"></span>
+          <i class="fas fa-user-circle"></i> Bienvenido <span class="spans"></span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
@@ -56,23 +113,169 @@
       </div>
     </div>
   </nav>
- <div class="conteiner-card">
-  <div class="container-fluid">
-        <h1>MI CARRITO</h1>
-        <p>Aqui encontraras tus productos selecionados!</p> 
-        
+ <div class="row">
+   <div class="card-colums shadow-sm custom-card" style="padding-left: 50px; padding-right: 50px;" >
+  <div class="container-fluid" >
+
     
-      
-        </div>
+        <h1>MI CARRITO <i class="fas fa-shopping-cart"></i></h1>
+        <p>Aqui encontraras tus productos selecionados!</p> 
+         </div>
         <br></br>
-        <div class="row">
-  <div class="col-sm-6" id="algo" >
+  <div class="row">
+  <div class="col-sm-8" id="algo" >
      </div>
- 
-  <div class="col-sm-4">
-    <h1> Subtotal: <span id="total"></span></h1>
+ <div class="col-sm-4">
+    <div class="content-box">
+      <h6><b>Resumen del Pedido</b></h6>
+<p> Subtotal: <span id="total"><i class="fas fa-dollar-sign"></i></span></p>
+    <p> Envio:<span id="envio"></span></p>
+    <hr>
+    <p> Total:<span id="total2"></span></p>
+    
+   
+    <div class="bs-example">
+      <!-- Extra Large modal -->
+      <button class="btn btn-primary" style="background: #ff4747;" onclick="validarTipoEnvios()">Finalizar compra</button>
+  
+      <div id="xlLargeModal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Metodo de envío</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  </div>
+                  <div class="modal-body">
+            <form id="formulario" class="formulario" style="text-align: center;">
+            <div class="container">
+              <div class="col-sm-8" id="inputs" style="text-align: center;">
+              <h6><b> Ingrese direccion y pais</b></h6>
+              <input id="calle" maxlength="50" type="text" placeholder="CALLE" style="width: 100%; margin-bottom: 25px;margin-right: 50px;padding: 7px; " ></input>
+              <label id="errorMensaje"></label>
+              <input id="numero" maxlength="10" type="number" placeholder="NUMERO DE PUERTA" style="width: 100%;margin-bottom: 25px;margin-right: 50px;padding: 7px;"></input>
+              <label id="errorDeMensaje2"></label>
+              <input id="esquina" maxlength="50" type="text" placeholder="ESQUINA" style="width: 100%;margin-bottom: 25px;margin-right: 50px;padding: 7px;"></input>
+              <label id="errorDeMensajex3"></label>
+              <input id="pais" maxlength="50" type="text" placeholder="PAÍS" style="width:100%;margin-bottom: 25px; margin-right: 50px;padding: 7px;"></input>
+              <label id="errorDeMensajey4"></label>
+              
+              </div>
+              <br></br>
+            </form>
+              <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg"  onclick="validarInputs()">Seleccionar Forma De Pago</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Metodo de pago</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            <a class="btn btn-primary"    data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" style="width: 30%; margin-right: 30px;"onclick="mostrarCollapse()">Tarjeta de credito</a>
+            <button class="btn btn-primary" id="demo2" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2" style="width: 30%;" onclick="mostrarCollapse2()">Cuenta bancaria </button>
+            
+          </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body" style="text-align: center;">
+                  <p><b>Datos de la tarjeta</b></p>
+                  <img src="img/visax.jpg " style="width: 30%; height: 30%;">
+                  <label style="text-align: left;"><b>Numero de tarjeta</b></label>
+                  <input id="nombrex" maxlength="50" type="text"  style="width:80%;"></input>
+                  <span id="errorNumero"></span>
+                  <label style="text-align: left;"><b>Fecha de caducidad</b></label>
+                  <div class="form-group" id="expiration-date" >
+                   <input id="mes" type="text" placeholder="MM" style="width:50px">
+                    <span id="errorMes"></span>
+                    <input id="año" placeholder="YY" type="text" style="width: 50px;">
+                    <span id="errorAño"></span>
+                <input id="cvv" type="text" placeholder="CVV" style="width: 50px;">
+                <span id="errorCvv"></span>
+                 </div>
+                 <p style="text-align: left;"><b> Nombre del Titular</b></p>
+                 <input id="nombre" type="text" placeholder="Nombre" style="margin-bottom: 10px;"></input>
+                 <span id="titular"></span>
+                 <input id="apellidos" type="text" placeholder="Apellidos" style="width: 100%"></input>
+                 <span id="apellido"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="card card-body">
+                <form id="formulario" style="text-align: center;">
+                <p><b>Datos del titular</b></p>
+                <input id="name" type="text" placeholder="Nombre" style="width: 100%;"></input>
+                 <span id="errorName"></span>
+                 <input id="surname" type="text" placeholder="Apellidos" style="width: 100%;"> </input>
+                 <span id="errorSurname"></span>
+                 <p><b>Nº de documento</b></p>
+                 <input id="CI" type="text" placeholder="CI" style="width: 100%;"></input>
+                 <span id="errorCI"></span>
+                 <p><b>Datos de cuenta </b></p>
+                 <input id="cuenta" type="text" placeholder="Nº de cuenta" style="width: 100%;"></input>
+                 <span id="errorCuenta"></span>
+                 <input id="importe" type="text" placeholder="Importe" style="width: 100%;"></input>
+                 <span id="errorImporte"></span>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    
+    
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"  onclick="validarCreditCard(); validarTransferencias()">Finalizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+             
+  
+              
+
+               
+      
+          
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+        
     </div>
     </div>
+    </div>
+  </div>
+  
+  <form>
+    <div class="row">
+      <div class="col-sm-8">
+        <h6> Seleccione tipo de envío:</h6>
+        <div id="errorEnvio"> </div>
+  <input type="radio" id="premium" name="name" value="2" onclick="precioTotal()"><i class="fas fa-cart-plus" id="carro_rojo"></i>
+  <label for="premiun">Premium (2-5 dias) se agregara un 15% sobre el subtotal</label><br>
+  <input type="radio" id="express" name="name" value="1" onclick="precioTotal()"><i class="fas fa-cart-plus" id="carro_azul"></i>
+  <label for="express">Express (5-8 dias) se agregara un 7% sobre el subtotal</label><br>
+  <input type="radio" id="standard" name="name" value="0" onclick="precioTotal()"><i class="fas fa-cart-plus"id="carro_amarillo"></i>
+  <label for="standard">Standard (12-15 dias) se agregara un 5% sobre el subtotal</label>
+  
+  </div>
+  </div>
+  </form>
+  
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -81,6 +284,8 @@
       <div></div>
     </div>
   </div>
+  </div>
+  
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
