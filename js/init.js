@@ -7,7 +7,7 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 const CART2 = "https://japdevdep.github.io/ecommerce-api/cart/654.json ";
-
+const county = "https://raw.githubusercontent.com/millan2993/countries/master/json/countries.json";
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
