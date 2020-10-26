@@ -137,23 +137,35 @@ function showRelatedProducts(array) {
         });
     });
 
-function myFunctionValidacion(valor) { // esta funcion es para validacion de campos vacios 
-    if (valor == '') {
-        return alert('Campo vacío, ingrese su pregunta por favor!');
+function myFunctionValidacion() { // esta funcion es para validacion de campos vacios 
+    var valor = document.getElementById("box").value;
+    if (valor == "" || valor == null) {
+        document.getElementById("errorValidacion").innerHTML = "Ingrese su comentario";
+    }else{
+        document.getElementById("errorValidacion").innerHTML = "";
     }
 }
 
-function validarRadio() {
-    var s = "no";
-    for (var i = 0; i < document.formix.estrellas[i].value.length; i++) {
-        if (document.fromix.estrellas[i].checked) {
-            alert("marco");
-            s = "si";
-        }
+
+function validarStar(){
+    var star = document.getElementsByName("estrellas");
+    var validar_star = false;
+
+    i= 1;
+    while(!validar_star && i < star.length){
+      if(star[i].checked){
+          validar_star =  true
+      }
+      i++;
     }
-    if (s == "no") {
-        alert("debe selecionar estrellas plix");
+    if(!validar_star){
+       document.getElementById("errorEstrella").innerHTML = "Debes seleccionar una calificacion";
+
+        return validar_star;
+    }else{
+        document.getElementById("errorEstrella").innerHTML = " ";
+        
+        return validar_star;
     }
 }
-
 
