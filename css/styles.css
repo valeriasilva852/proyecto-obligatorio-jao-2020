@@ -139,3 +139,54 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+#errorEnvio,
+#errorMensaje,
+#errorEstrella,
+#errorDeMensaje2,
+#errorDeMensajex3,
+#errorDeMensajey4,
+#errorNumero,
+#errorMes,
+#titular,
+#apellido,
+#errorCvv,
+#errorAño,
+#errorName,
+#errorSurname,
+#errorCI,
+#errorCuenta,
+#errorImporte{
+  color: red;
+}
+#errorNumero,
+#titular,
+#apellido{
+    font-size: 15px;
+}
+#errorMes,
+#errorAño,
+#errorCvv{
+  font-size: 10px;
+}
+#calle,
+#numero,
+#esquina,
+#pais{
+   color: rgba(0,0,0,0.5);
+}
+#name,
+#surname,
+#CI,
+#cuenta,
+#importe{
+     margin-bottom: 15px;
+}
+#carro_rojo{
+  color: red;
+}
+#carro_amarillo{
+  color: yellow;
+}
+#carro_azul{
+  color: blue;
+}
