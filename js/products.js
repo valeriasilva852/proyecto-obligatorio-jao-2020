@@ -43,25 +43,20 @@ function showProductList() {
             ((maxCost == undefined) || (maxCost != undefined && parseInt(product.cost) <= maxCost))) {
 
             htmlContentToAppend += `
-                <a href="product-info.html" class="list-group-item list-group-item-action">
-                    <div class="row" id="` + product.name + `">
-                        <div class="col-3">
-                            <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                        </div>
-                        <div class="col">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h4 class="mb-1">`+ product.name + `</h4>
-                                <small class="text-muted">Costo: ` + product.currency + ` ` + product.cost + `<br/>Vendidos: ` + product.soldCount + ` </small>
-                            </div>
-                            <div> ` + product.description + ` </div>
-                            </div>
-         
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4">
+            <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <img class="bd-placeholder-img card-img-top"  src="`+ product.imgSrc +`">
+            <h3 class="m-3"> `+ product.name +`(122)</h3>
+            <div class="card-body">
+              <p class="card-text">`+ product.description +`</p>
+              <small class="text-muted">Costo: ` + product.currency + ` ` + product.cost + `<br/>Vendidos: ` + product.soldCount + ` </small>
+              </div>
+          </a>
+             </div>
+               
                 `
         }
-        document.getElementById("product-list-container").innerHTML = htmlContentToAppend; // error en el container
+        document.getElementById("products1").innerHTML = htmlContentToAppend; // error en el container
     }
 }
 document.addEventListener("DOMContentLoaded", function (f) {
