@@ -87,7 +87,7 @@ function nombreUsuario(){
     }else{
     
         email = localStorage.getItem('user');
-        document.getElementById("nombreSecion").textContent = "bienvenido "+ email;
+        document.getElementById("spans").value =  email;
     }
 
 }
@@ -98,3 +98,5 @@ function cerrarSesion(){
 
     });
 };
+
+  //  document.getElementById("spans").value = localStorage.getItem("user");
