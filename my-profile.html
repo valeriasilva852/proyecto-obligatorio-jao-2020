@@ -47,26 +47,37 @@
           <i class="fas fa-user-circle"></i> Bienvenido <span class="spans"></span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
-          <a class="dropdown-item" href="cart.html">Carrito</a>
-          <a class="dropdown-item" href="login.html" id="logout" onclick="cerrarSesion()">Log out</a>
+          <a class="dropdown-item" href="my-profile.html"><i class="fas fa-user-circle"></i>Mi Perfil</a>
+          <a class="dropdown-item" href="cart.html"><i class="fas fa-shopping-cart" ></i> Carrito</a>
+          <a class="dropdown-item" href="login.html" id="logout" onclick="cerrarSesion(); borrarDatos()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a>
         </div>
       </div>
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+      <div class="card-colums shadow-sm custom-card" id="card" >
+        <h1 id="titulo">Mi Perfil</h1>
+        <hr>
+        <p class="parrafo"><b>Nombre </b></p>
+        <input type="text" placeholder="nombre" id="Nombre1"></input>
+        <p class="parrafo"><b>Apellidos </b></p>
+        <input type="text" placeholder="apellidos" id="apellidos2"></input>
+        <p class="parrafo"><b>Edad</b></p>
+        <input type="text" placeholder="Edad" id="edad1"></input>
+        <p class="parrafo"><b>Email</b></p>
+        <input type="text" placeholder="email" id="email1"></input>
+        <p class="parrafo"><b>Telefono</b></p>
+        <input type="text" placeholder="telefono" id="telefono1"></input>
+        <br></br>
+        <button class="btn" id="btn1" style="text-align: center;" onclick="datos()">Guardar Datos <i class="far fa-save"></i></button>
+        <button class="btn" id="btn2" onclick="borrarDatos()">Eliminar <i class="fas fa-trash-alt"></i></button>
+        <br></br>
+        </div>
+        
+
+       
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
+
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>
