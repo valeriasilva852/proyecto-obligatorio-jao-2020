@@ -182,13 +182,13 @@ function validarCreditCard(){
 
     
 
-  if(numCard == "" || numCard == null){
+  if(numCard == "" && MM == "" && YY == "" && cvv == "" && nombre == "" && apellido == "" ){
        document.getElementById("errorNumero").innerHTML = "Ingrese numero de tarjeta";
        console.log("scihiod");
   } else {
         document.getElementById("errorNumero").innerHTML = "";
     }
-   if(MM == "" || MM == null){
+  if(MM == "" || MM == null){
      document.getElementById("errorMes").innerHTML = "Campo vacio";
    } else{
        document.getElementById("errorMes").innerHTML = "";
@@ -205,7 +205,7 @@ function validarCreditCard(){
    }
    if(nombre == "" || nombre == null){
        document.getElementById("titular").innerHTML = "Ingrese sus nombres";
-   } else{
+    } else{
       document.getElementById("titular").innerHTML = "";
    }
    if(apellido == "" || apellido == null){
