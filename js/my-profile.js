@@ -1,9 +1,8 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 
+// variable my storage donde se encuentra el localStorage
 let myStorage = window.localStorage;
 
+// esta funcion tiene el json con los objetos de datos al los cuales le asigno su propio input
 function datos(){
 var obj = { 
   "name": document.getElementById("Nombre1").value,
