@@ -228,4 +228,12 @@ a.custom-card:hover {
 }
 #titulo{
   text-align: center;
+  font-size: 50px;
+}
+#x{
+  background: white;
+}
+#texto{
+text-align: center;
+font-size: 20px;
 }
