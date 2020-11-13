@@ -44,7 +44,7 @@ function showProductList() {
 
             htmlContentToAppend += `
             <div class="col-md-4">
-            <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
             <img class="bd-placeholder-img card-img-top"  src="`+ product.imgSrc +`">
             <h3 class="m-3"> `+ product.name +`(122)</h3>
             <div class="card-body">
